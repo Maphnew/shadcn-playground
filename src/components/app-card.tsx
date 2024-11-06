@@ -16,20 +16,20 @@ import {
 } from "@/components/ui/dialog"
 
 
-export function AppCard() {
+export function AppCard(props) {
     return (
         <Dialog>
             <DialogTrigger>
-                <Card>
+                <Card className={props.className + " w-40 h-48"}>
                     <CardHeader>
-                        <CardTitle>Card Title</CardTitle>
-                        <CardDescription>Card Description</CardDescription>
+                        <CardTitle>{props.title || '\u00a0'}</CardTitle>
+                        <CardDescription>{props.desc || '\u00a0'}</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <p>Card Content</p>
+                        <p>{props.content || '\u00a0'}</p>
                     </CardContent>
                     <CardFooter>
-                        <p>Card Footer</p>
+                        <p>{props.footer || '\u00a0'}</p>
                     </CardFooter>
                 </Card>
             </DialogTrigger>
